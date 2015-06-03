@@ -17,10 +17,22 @@ TODO: Enter the cookbook description here.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['cmake-bin']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['cmake-bin']['version']</tt></td>
+    <td>String</td>
+    <td>Version to install (e.g. "3.2.3"), or LATEST for the latest git tag</td>
+    <td><tt>LATEST</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['cmake-bin']['architecture']</tt></td>
+    <td>String</td>
+    <td>Currently only "x86_64" or "i386"</td>
+    <td><tt>Derived from guest OS</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['cmake-bin']['platform']</tt></td>
+    <td>String</td>
+    <td>Currently only "Linux"</td>
+    <td><tt>Derived from guest OS</tt></td>
   </tr>
 </table>
 
@@ -40,4 +52,4 @@ Include `cmake-bin` in your node's `run_list`:
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Joe Hildebrand
