@@ -1,6 +1,6 @@
 # cmake-bin-cookbook
 
-TODO: Enter the cookbook description here.
+Pull current [cmake](http://www.cmake.org/) binary in a chef recipe
 
 ## Supported Platforms
 
@@ -50,6 +50,6 @@ Include `cmake-bin` in your node's `run_list`:
 }
 ```
 
-## License and Authors
+## License
 
-Author:: Joe Hildebrand
+MIT
