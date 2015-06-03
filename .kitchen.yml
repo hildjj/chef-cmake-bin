@@ -1,0 +1,27 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-12.04
+    run_list:
+      - recipe[apt]
+  - name: ubuntu/vivid64
+    run_list:
+      - recipe[apt]
+  - name: centos-6.4
+  - name: fedora-20
+
+suites:
+  - name: default
+    run_list:
+      - recipe[cmake-bin]
+  - name: ver
+    run_list:
+      - recipe[cmake-bin]
+    attributes:
+      cmake-bin:
+        version: 3.2.2
