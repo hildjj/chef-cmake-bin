@@ -23,7 +23,7 @@ ruby_block "get latest" do
           vers.push(Gem::Version.new(m[1]))
         end
       end
-      vers.sort()
+      vers.sort!
       node.default["cmake-bin"]["version"] = vers[-1].to_s()
     end
     node.default["cmake-bin"]["sh"] = "cmake-#{node["cmake-bin"]["version"]}-#{cmake_platform}-#{cmake_arch}.sh"
@@ -32,7 +32,7 @@ end
 
 remote_file "get sh" do
   path lazy{"#{cache_dir}/#{node["cmake-bin"]["sh"]}"}
-  source lazy{"http://www.cmake.org/files/v#{node["cmake-bin"]["version"][/^\d\.\d/, 0]}/#{node["cmake-bin"]["sh"]}"}
+  source lazy{"http://www.cmake.org/files/v#{node["cmake-bin"]["version"][/^\d+\.\d+/, 0]}/#{node["cmake-bin"]["sh"]}"}
 end
 
 execute "cmake install" do
